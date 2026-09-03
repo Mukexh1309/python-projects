@@ -1,35 +1,21 @@
+def get_mark(subject):
+    mark = int(input(f"Enter your {subject} Mark: "))
+
+    while mark < 0 or mark > 100:
+        print("Marks are Invalid")
+        mark = int(input(f"Enter your {subject} Mark again: "))
+
+    return mark
+
 Name = str(input("Enter Student Name:"))
 Reg_No = int(input("Enter Reg No:"))
 
-Mathematics = int(input("Enter your Mathematics Mark:"))
-while Mathematics < 0 or Mathematics > 100:
-    print("Marks are Invalid")
-    Mathematics = int(input("Enter your Mathematics Mark again: "))
-
-Physics = int(input("Enter your Physics Mark:"))
-while Physics < 0 or Physics > 100:
-    print("Marks are Invalid")
-    Physics = int(input("Enter your Physics Mark again: "))
-
-Chemistry = int(input("Enter your Chemistry Mark:"))
-while Chemistry < 0 or Chemistry > 100:
-    print("Marks are Invalid")
-    Chemistry = int(input("Enter your Chemistry Mark again: "))
-
-Computer_Science = int(input("Enter your Computer Science Mark:"))
-while Computer_Science < 0 or Computer_Science > 100:
-    print("Marks are Invalid")
-    Computer_Science = int(input("Enter your Computer Science Mark again: "))
-    
-English = int(input("Enter your English Mark:"))
-while English < 0 or English > 100:
-    print("Marks are Invalid")
-    English = int(input("Enter your English Mark again: "))
-    
-Tamil = int(input("Enter your Tamil Mark:"))
-while Tamil < 0 or Tamil > 100:
-    print("Marks are Invalid")
-    Tamil = int(input("Enter your Tamil Mark again: "))
+Mathematics = get_mark("Mathematics")
+Physics = get_mark("Physics")
+Chemistry = get_mark("Chemistry")
+Computer_Science = get_mark("Computer Science")
+English = get_mark("English")
+Tamil = get_mark("Tamil")
 
 Total = Mathematics + Physics + Chemistry + Computer_Science + English + Tamil
 Percentage = Total / 600*100
@@ -49,8 +35,7 @@ if Mathematics >= 35 and Physics >= 35 and Chemistry >= 35 and Computer_Science 
     Result = "PASS"
 else:
     Result = "FAIL"
-    
-     
+
 print("========================================")
 print("          STUDENT REPORT CARD")
 print("========================================")
